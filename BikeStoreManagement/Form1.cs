@@ -113,15 +113,18 @@ namespace BikeStoreManagement
         }
 
         private void deleteCustomer()
-        {
-            
+        {  
             try
             {
+                // tao cau query voi param @choosenId
                 String sql = "DELETE FROM customers WHERE customer_id = @choosenId";
                 cmd.CommandText = sql;
+                // khai bao params va gia tri trong command
                 cmd.Parameters.Add("@choosenId", SqlDbType.Int);
                 cmd.Parameters["@choosenId"].Value = choosenId;
+
                 conn.Open();
+                // chay query
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
@@ -130,9 +133,7 @@ namespace BikeStoreManagement
             catch (Exception ex)
             {
                 MessageBox.Show("Co loi xay ra " + ex.Message);
-            }
-            
-            
+            }            
         }
 
         private void clearForm()
