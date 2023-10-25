@@ -133,9 +133,11 @@ namespace BikeStoreManagement
             catch (Exception ex)
             {
                 MessageBox.Show("Co loi xay ra " + ex.Message);
-            }            
+            }
+                    
         }
 
+        // xoa form thong tin
         private void clearForm()
         {
             tbCity.Text = "";
@@ -148,6 +150,7 @@ namespace BikeStoreManagement
             tbZipCode.Text = "";
         }
 
+        // xoa form thong tin va get lai data
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearForm();
