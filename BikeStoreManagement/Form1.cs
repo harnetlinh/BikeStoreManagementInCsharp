@@ -108,7 +108,7 @@ namespace BikeStoreManagement
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Co loi trong loi trong qua trinh tao " + ex.Message);
+                MessageBox.Show("Co loi trong qua trinh tao " + ex.Message);
             }
         }
 
@@ -118,6 +118,7 @@ namespace BikeStoreManagement
             try
             {
                 String sql = "";
+                //TODO: create a delete query with param choosenId
                 MessageBox.Show("Xoa Thanh Cong!");
             }
             catch (Exception ex)
