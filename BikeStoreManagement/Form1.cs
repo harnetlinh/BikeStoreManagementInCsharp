@@ -117,8 +117,14 @@ namespace BikeStoreManagement
             
             try
             {
-                String sql = "";
-                //TODO: create a delete query with param choosenId
+                String sql = "DELETE FROM customers WHERE customer_id = @choosenId";
+                cmd.CommandText = sql;
+                cmd.Parameters.Add("@choosenId", SqlDbType.Int);
+                cmd.Parameters["@choosenId"].Value = choosenId;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
                 MessageBox.Show("Xoa Thanh Cong!");
             }
             catch (Exception ex)
