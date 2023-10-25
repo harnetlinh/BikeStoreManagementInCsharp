@@ -45,33 +45,36 @@
             btnDelete = new Button();
             btnEdit = new Button();
             dgv = new DataGridView();
+            State = new Label();
+            tbState = new TextBox();
+            tbZipCode = new TextBox();
+            label1 = new Label();
+            lbChoosenId = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
             // 
             // FirstName
             // 
             FirstName.AutoSize = true;
-            FirstName.Location = new Point(39, 115);
+            FirstName.Location = new Point(39, 79);
             FirstName.Name = "FirstName";
             FirstName.Size = new Size(122, 32);
             FirstName.TabIndex = 0;
             FirstName.Text = "FirstName";
-
             // 
             // LastName
             // 
             LastName.AutoSize = true;
-            LastName.Location = new Point(39, 195);
+            LastName.Location = new Point(42, 142);
             LastName.Name = "LastName";
             LastName.Size = new Size(119, 32);
             LastName.TabIndex = 1;
             LastName.Text = "LastName";
-
             // 
             // City
             // 
             City.AutoSize = true;
-            City.Location = new Point(39, 484);
+            City.Location = new Point(44, 396);
             City.Name = "City";
             City.Size = new Size(55, 32);
             City.TabIndex = 2;
@@ -80,7 +83,7 @@
             // Street
             // 
             Street.AutoSize = true;
-            Street.Location = new Point(39, 416);
+            Street.Location = new Point(42, 329);
             Street.Name = "Street";
             Street.Size = new Size(76, 32);
             Street.TabIndex = 3;
@@ -89,7 +92,7 @@
             // Email
             // 
             Email.AutoSize = true;
-            Email.Location = new Point(39, 344);
+            Email.Location = new Point(44, 260);
             Email.Name = "Email";
             Email.Size = new Size(71, 32);
             Email.TabIndex = 4;
@@ -98,7 +101,7 @@
             // Phone
             // 
             Phone.AutoSize = true;
-            Phone.Location = new Point(39, 273);
+            Phone.Location = new Point(42, 204);
             Phone.Name = "Phone";
             Phone.Size = new Size(82, 32);
             Phone.TabIndex = 5;
@@ -106,42 +109,42 @@
             // 
             // tbFirstName
             // 
-            tbFirstName.Location = new Point(209, 112);
+            tbFirstName.Location = new Point(209, 79);
             tbFirstName.Name = "tbFirstName";
             tbFirstName.Size = new Size(200, 39);
             tbFirstName.TabIndex = 6;
             // 
             // tbStreet
             // 
-            tbStreet.Location = new Point(209, 416);
+            tbStreet.Location = new Point(209, 326);
             tbStreet.Name = "tbStreet";
             tbStreet.Size = new Size(200, 39);
             tbStreet.TabIndex = 7;
             // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(209, 337);
+            tbEmail.Location = new Point(209, 260);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(200, 39);
             tbEmail.TabIndex = 8;
             // 
             // tbPhone
             // 
-            tbPhone.Location = new Point(209, 266);
+            tbPhone.Location = new Point(209, 197);
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(200, 39);
             tbPhone.TabIndex = 9;
             // 
             // tbLastName
             // 
-            tbLastName.Location = new Point(209, 188);
+            tbLastName.Location = new Point(209, 142);
             tbLastName.Name = "tbLastName";
             tbLastName.Size = new Size(200, 39);
             tbLastName.TabIndex = 10;
             // 
             // tbCity
             // 
-            tbCity.Location = new Point(209, 484);
+            tbCity.Location = new Point(209, 389);
             tbCity.Name = "tbCity";
             tbCity.Size = new Size(200, 39);
             tbCity.TabIndex = 11;
@@ -154,6 +157,7 @@
             btnAdd.TabIndex = 12;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnClear
             // 
@@ -163,6 +167,7 @@
             btnClear.TabIndex = 13;
             btnClear.Text = "Clear all";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -172,6 +177,7 @@
             btnDelete.TabIndex = 14;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -191,12 +197,58 @@
             dgv.RowTemplate.Height = 41;
             dgv.Size = new Size(850, 496);
             dgv.TabIndex = 16;
+            dgv.CellClick += dgv_CellClick;
+            // 
+            // State
+            // 
+            State.AutoSize = true;
+            State.Location = new Point(44, 456);
+            State.Name = "State";
+            State.Size = new Size(67, 32);
+            State.TabIndex = 17;
+            State.Text = "State";
+            // 
+            // tbState
+            // 
+            tbState.Location = new Point(209, 449);
+            tbState.Name = "tbState";
+            tbState.Size = new Size(200, 39);
+            tbState.TabIndex = 18;
+            // 
+            // tbZipCode
+            // 
+            tbZipCode.Location = new Point(209, 517);
+            tbZipCode.Name = "tbZipCode";
+            tbZipCode.Size = new Size(200, 39);
+            tbZipCode.TabIndex = 19;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(44, 517);
+            label1.Name = "label1";
+            label1.Size = new Size(111, 32);
+            label1.TabIndex = 20;
+            label1.Text = "Zip Code";
+            // 
+            // lbChoosenId
+            // 
+            lbChoosenId.AutoSize = true;
+            lbChoosenId.Location = new Point(915, 42);
+            lbChoosenId.Name = "lbChoosenId";
+            lbChoosenId.Size = new Size(0, 32);
+            lbChoosenId.TabIndex = 21;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1427, 620);
+            Controls.Add(lbChoosenId);
+            Controls.Add(label1);
+            Controls.Add(tbZipCode);
+            Controls.Add(tbState);
+            Controls.Add(State);
             Controls.Add(dgv);
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
@@ -241,5 +293,10 @@
         private Button btnDelete;
         private Button btnEdit;
         private DataGridView dgv;
+        private Label State;
+        private TextBox tbState;
+        private TextBox tbZipCode;
+        private Label label1;
+        private Label lbChoosenId;
     }
 }
